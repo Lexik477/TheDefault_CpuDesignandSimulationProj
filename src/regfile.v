@@ -16,7 +16,7 @@ module regfile(
     integer i;
 
     // Initialize all registers to zero
-    integer i;
+
     initial begin
         for (i = 0; i < 32; i = i + 1) begin
             registers[i] = 32'd0;
