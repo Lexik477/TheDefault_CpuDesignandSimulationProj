@@ -24,6 +24,7 @@ module controlUnit(
     localparam OP_JAL   = 7'b1101111; //jump and link
     localparam OP_JALR  = 7'b1100111; //load upper immediate
     localparam OP_LUI   = 7'b0110111; //add upper imm.
+    localparam OP_AUIPC = 7'b0010111;
 
 //ALU operation types!
     localparam ALU_OP_RTYPE = 2'b10; //R-type instructions
@@ -89,9 +90,28 @@ module controlUnit(
                 jump = 1'b1;  // Jump instruction
                 imm_sel = IMM_U;  // U-type immediate format
             end
-            default: begin
-                // Safe defaults
+
+             OP_JALR: begin   // jalr
+                reg_write = 1'b1;
+                jump = 1'b1;
+                alu_src = 1'b1;      // Use immediate for offset
+                imm_sel = IMM_I;     // I-type immediate format
             end
+
+            OP_LUI: begin    // lui
+                reg_write = 1'b1;
+                alu_src = 1'b1;      // Use immediate value
+                imm_sel = IMM_U;     // U-type immediate format
+            end
+
+              OP_AUIPC: begin  // auipc
+                reg_write = 1'b1;
+                alu_src = 1'b1;      // Use immediate value
+                imm_sel = IMM_U;     // U-type immediate format
+            end
+
+
+
         endcase
     end
 

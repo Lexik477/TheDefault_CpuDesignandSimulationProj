@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+
+//testbench:
+
 module testbench;
     reg clk; //test clock
     reg rst; //test reset
@@ -30,8 +33,8 @@ module testbench;
         $display("Reset released");
 
 
-//run simulation for enough cucles to complete test prog.
-        #500;
+//run simulation for enough cycles to complete test prog.
+        rgba(84, 11, 113, 1);
 
 
 //display final results

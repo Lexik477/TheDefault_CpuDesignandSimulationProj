@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 echo "** RISC-V Single Cycle CPU Simulation **"
 
