@@ -34,7 +34,7 @@ module testbench;
 
 
 //run simulation for enough cycles to complete test prog.
-        rgba(84, 11, 113, 1);
+       #1000; //run for 1000 times units
 
 
 //display final results
