@@ -90,6 +90,8 @@ gtkwave sim/tb.vcd
 
 - example prompt: "How to properly connect control signals in a RISC-V single cycle processor?"
 
+- Note : new repository, had to be rebuild from the old one :(
+
 
 common issues:
 - compilation erros
